@@ -116,10 +116,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<script>
 		$(window).load(function () {
 			$("#flexiselDemo1").flexisel({
-				visibleItems: 3,
-				animationSpeed: 1000,
+				visibleItems: 4,
+				animationSpeed: 1500,
 				autoPlay: true,
-				autoPlaySpeed: 3000,
+				autoPlaySpeed: 5000,
 				pauseOnHover: true,
 				enableResponsiveBreakpoints: true,
 				responsiveBreakpoints: {

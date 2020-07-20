@@ -33,7 +33,7 @@
                         <label class="col-md-3"><b>Category Image :</b></label>
                         <div class="col-md-3">
                            <input type="file"  class="form-control-file" name="category_image" />
-                           <img src="{{asset($category->category_image)}}" alt="" height="70" width="90">
+                           <img src="{{ asset($category->category_image)}}" alt="" height="70" width="90">
                         </div>
                      </div>
                      <div class="form-group">
@@ -47,7 +47,7 @@
                         
                         <div class="col-md-3">
                            
-                           <input type="submit"  value="Update"  class="btn btn-success"  data-toggle="modal" data-target="#updateModal"/>
+                           <input type="submit"  value="Update"  class="btn btn-success" />
                         </div>   
                         
                      </div>

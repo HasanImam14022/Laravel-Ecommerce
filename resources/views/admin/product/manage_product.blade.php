@@ -56,7 +56,7 @@
                            <a href="{{URL::to('/product-edit/'.$product->id )}}" class="btn btn-success">
                               <i class="fa fa-edit"></i>
                            </a>
-                           <a href="{{URL::to('/product-delete/'.$product->id )}}" class="btn btn-danger" data-toggle="modal" data-target="#deleteModal">
+                           <a href="{{URL::to('/product-delete/'.$product->id )}}" class="btn btn-danger">
                               <i class="fa fa-trash"></i>
                            </a>
                       </td>

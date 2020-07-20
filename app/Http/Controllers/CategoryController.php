@@ -70,7 +70,12 @@ class CategoryController extends Controller
 
             if($image)
             {
-                unlink($category->category_image);
+               
+                if($category->category_image)
+                {
+                    unlink($category->category_image);
+                }
+                
                 $imageName = $image->getClientOriginalName();
                 $directory = './category-images/';
                 $image->move($directory,$imageName);
@@ -80,6 +85,7 @@ class CategoryController extends Controller
             }
             else
             {
+                
                 $imageUrl = $category->category_image;
             }
 
@@ -92,6 +98,11 @@ class CategoryController extends Controller
     public function deleteCategory($id)
     {
         $category = Category::find($id);
+
+            if($category->category_image)
+                {
+                    unlink($category->category_image);
+                }
         $category->delete();
         return redirect()->back();
 

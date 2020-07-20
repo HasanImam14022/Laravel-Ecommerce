@@ -102,7 +102,11 @@ class ProductController extends Controller
 
             if($image)
             {
-                unlink($product->product_image);
+                if($product->product_image)
+                {
+                    unlink($product->product_image);
+                }
+                
                 $imageName = $image->getClientOriginalName();
                 $directory = './product-images/';
                 $image->move($directory,$imageName);

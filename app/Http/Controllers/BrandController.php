@@ -69,7 +69,10 @@ class BrandController extends Controller
 
             if($image)
             {
-                unlink($brand->brand_image);
+                if($brand->brand_image)
+                {
+                    unlink($brand->brand_image);
+                }
                 $imageName = $image->getClientOriginalName();
                 $directory = './brand-images/';
                 $image->move($directory,$imageName);
@@ -91,6 +94,11 @@ class BrandController extends Controller
     public function deleteBrand($id)
     {
         $brand = Brand::find($id);
+        if($brand->brand_image)
+                {
+                    unlink($brand->brand_image);
+                }
+        
         $brand->delete();
         return redirect()->back();
 

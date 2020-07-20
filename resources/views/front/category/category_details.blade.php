@@ -44,210 +44,50 @@
             </div>
            
             <!-- food preference -->
-            <div class="left-side">
-                <h3 class="agileits-sear-head">Food Preference</h3>
-                <ul>
-                    <li>
-                        <input type="checkbox" class="checked">
-                        <span class="span">Vegetarian</span>
-                    </li>
-                    <li>
-                        <input type="checkbox" class="checked">
-                        <span class="span">Non-Vegetarian</span>
-                    </li>
-                </ul>
-            </div>
+            
             <!-- //food preference -->
             <!-- discounts -->
-            <div class="left-side">
-                <h3 class="agileits-sear-head">Discount</h3>
-                <ul>
-                    <li>
-                        <input type="checkbox" class="checked">
-                        <span class="span">5% or More</span>
-                    </li>
-                    <li>
-                        <input type="checkbox" class="checked">
-                        <span class="span">10% or More</span>
-                    </li>
-                    <li>
-                        <input type="checkbox" class="checked">
-                        <span class="span">20% or More</span>
-                    </li>
-                    <li>
-                        <input type="checkbox" class="checked">
-                        <span class="span">30% or More</span>
-                    </li>
-                    <li>
-                        <input type="checkbox" class="checked">
-                        <span class="span">50% or More</span>
-                    </li>
-                    <li>
-                        <input type="checkbox" class="checked">
-                        <span class="span">60% or More</span>
-                    </li>
-                </ul>
-            </div>
+            
             <!-- //discounts -->
             <!-- reviews -->
-            <div class="customer-rev left-side">
-                <h3 class="agileits-sear-head">Customer Review</h3>
-                <ul>
-                    <li>
-                        <a href="#">
-                            <i class="fa fa-star" aria-hidden="true"></i>
-                            <i class="fa fa-star" aria-hidden="true"></i>
-                            <i class="fa fa-star" aria-hidden="true"></i>
-                            <i class="fa fa-star" aria-hidden="true"></i>
-                            <i class="fa fa-star" aria-hidden="true"></i>
-                            <span>5.0</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <i class="fa fa-star" aria-hidden="true"></i>
-                            <i class="fa fa-star" aria-hidden="true"></i>
-                            <i class="fa fa-star" aria-hidden="true"></i>
-                            <i class="fa fa-star" aria-hidden="true"></i>
-                            <i class="fa fa-star-o" aria-hidden="true"></i>
-                            <span>4.0</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <i class="fa fa-star" aria-hidden="true"></i>
-                            <i class="fa fa-star" aria-hidden="true"></i>
-                            <i class="fa fa-star" aria-hidden="true"></i>
-                            <i class="fa fa-star-half-o" aria-hidden="true"></i>
-                            <i class="fa fa-star-o" aria-hidden="true"></i>
-                            <span>3.5</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <i class="fa fa-star" aria-hidden="true"></i>
-                            <i class="fa fa-star" aria-hidden="true"></i>
-                            <i class="fa fa-star" aria-hidden="true"></i>
-                            <i class="fa fa-star-o" aria-hidden="true"></i>
-                            <i class="fa fa-star-o" aria-hidden="true"></i>
-                            <span>3.0</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <i class="fa fa-star" aria-hidden="true"></i>
-                            <i class="fa fa-star" aria-hidden="true"></i>
-                            <i class="fa fa-star-half-o" aria-hidden="true"></i>
-                            <i class="fa fa-star-o" aria-hidden="true"></i>
-                            <i class="fa fa-star-o" aria-hidden="true"></i>
-                            <span>2.5</span>
-                        </a>
-                    </li>
-                </ul>
-            </div>
+            
             <!-- //reviews -->
             <!-- cuisine -->
-            <div class="left-side">
-                <h3 class="agileits-sear-head">Cuisine</h3>
-                <ul>
-                    <li>
-                        <input type="checkbox" class="checked">
-                        <span class="span">South American</span>
-                    </li>
-                    <li>
-                        <input type="checkbox" class="checked">
-                        <span class="span">French</span>
-                    </li>
-                    <li>
-                        <input type="checkbox" class="checked">
-                        <span class="span">Greek</span>
-                    </li>
-                    <li>
-                        <input type="checkbox" class="checked">
-                        <span class="span">Chinese</span>
-                    </li>
-                    <li>
-                        <input type="checkbox" class="checked">
-                        <span class="span">Japanese</span>
-                    </li>
-                    <li>
-                        <input type="checkbox" class="checked">
-                        <span class="span">Italian</span>
-                    </li>
-                    <li>
-                        <input type="checkbox" class="checked">
-                        <span class="span">Mexican</span>
-                    </li>
-                    <li>
-                        <input type="checkbox" class="checked">
-                        <span class="span">Thai</span>
-                    </li>
-                    <li>
-                        <input type="checkbox" class="checked">
-                        <span class="span">Indian</span>
-                    </li>
-                    <li>
-                        <input type="checkbox" class="checked">
-                        <span class="span"> Spanish </span>
-                    </li>
-                </ul>
-            </div>
+            <div class="deal-leftmk left-side">
+					<h3 class="agileits-sear-head"><marquee>Special Categories</marquee></h3>
+					@foreach($categories as $category)
+					<div class="special-sec1">
+						<div class="col-xs-4 img-deals">
+							<img src="{{asset($category->category_image)}}" alt="" height="80px" width="60px">
+						</div>
+						<div class="col-xs-8 img-deal1">
+							<h3>{{$category->category_name}}</h3>
+							<a href="single.html">$18.00</a>
+						</div>
+						<div class="clearfix"></div>
+					</div>
+					@endforeach
+					
+				</div>
             <!-- //cuisine -->
             <!-- deals -->
-            <div class="deal-leftmk left-side">
-                <h3 class="agileits-sear-head">Special Deals</h3>
-                <div class="special-sec1">
-                    <div class="col-xs-4 img-deals">
-                        <img src="{{asset('/')}}front/images/d2.jpg" alt="">
-                    </div>
-                    <div class="col-xs-8 img-deal1">
-                        <h3>Lay's Potato Chips</h3>
-                        <a href="">$18.00</a>
-                    </div>
-                    <div class="clearfix"></div>
-                </div>
-                <div class="special-sec1">
-                    <div class="col-xs-4 img-deals">
-                        <img src="{{asset('/')}}front/images/d1.jpg" alt="">
-                    </div>
-                    <div class="col-xs-8 img-deal1">
-                        <h3>Bingo Mad Angles</h3>
-                        <a href="">$9.00</a>
-                    </div>
-                    <div class="clearfix"></div>
-                </div>
-                <div class="special-sec1">
-                    <div class="col-xs-4 img-deals">
-                        <img src="{{asset('/')}}front/images/d4.jpg" alt="">
-                    </div>
-                    <div class="col-xs-8 img-deal1">
-                        <h3>Tata Salt</h3>
-                        <a href="">$15.00</a>
-                    </div>
-                    <div class="clearfix"></div>
-                </div>
-                <div class="special-sec1">
-                    <div class="col-xs-4 img-deals">
-                        <img src="{{asset('/')}}front/images/d5.jpg" alt="">
-                        
-                    </div>
-                    <div class="col-xs-8 img-deal1">
-                        <h3>Gujarat Dry Fruit</h3>
-                        <a href="">$525.00</a>
-                    </div>
-                    <div class="clearfix"></div>
-                </div>
-                <div class="special-sec1">
-                    <div class="col-xs-4 img-deals">
-                        <img src="{{asset('/')}}front/images/d3.jpg" alt="">
-                    </div>
-                    <div class="col-xs-8 img-deal1">
-                        <h3>Cadbury Dairy Milk</h3>
-                        <a href="">$149.00</a>
-                    </div>
-                    <div class="clearfix"></div>
-                </div>
-            </div>
+            <!-- brands -->
+				<div class="deal-leftmk left-side">
+					<h3 class="agileits-sear-head"><marquee>Special Brands</marquee></h3>
+					@foreach($brands as $brand)
+					<div class="special-sec1">
+						<div class="col-xs-4 img-deals">
+							<img src="{{asset($brand->brand_image)}}" alt="" height="80px" width="60px">
+						</div>
+						<div class="col-xs-8 img-deal1">
+							<h3>{{$brand->brand_name}}</h3>
+							<a href="single.html">$18.00</a>
+						</div>
+						<div class="clearfix"></div>
+					</div>
+					@endforeach
+					
+				</div>
             <!-- //deals -->
         </div>
         <!-- //product left -->
@@ -299,7 +139,7 @@
 						@endforeach
 						<div class="clearfix"></div>
 					</div>
-						
+						{{$products->links()}}
                 <!-- //first section -->
 
             </div>
@@ -322,19 +162,20 @@
         <!-- //tittle heading -->
         <div class="content-bottom-in">
             <ul id="flexiselDemo1">
+             @foreach($products2 as $product2)
                 <li>
                     <div class="w3l-specilamk">
                         <div class="speioffer-agile">
                             <a href="single.html">
-                                <img src="{{asset('/')}}front/images/s1.jpg" alt="">
+                                <img src="{{asset($product2->product_image)}}" alt="" height="150px" width="120px">
                             </a>
                         </div>
                         <div class="product-name-w3l">
                             <h4>
-                                <a href="single.html">Aashirvaad, 5g</a>
+                                <a href="{{URL::to('productDetails',['id' => $product->id])}}">{{$product2->product_name}}</a>
                             </h4>
                             <div class="w3l-pricehkj">
-                                <h6>$220.00</h6>
+                                <h6>BDT-{{$product2->product_price}} Tk.</h6>
                                 <p>Save $40.00</p>
                             </div>
                             <div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out">
@@ -356,244 +197,7 @@
                         </div>
                     </div>
                 </li>
-                <li>
-                    <div class="w3l-specilamk">
-                        <div class="speioffer-agile">
-                            <a href="single.html">
-                                <img src="{{asset('/')}}front/images/s4.jpg" alt="">
-                            </a>
-                        </div>
-                        <div class="product-name-w3l">
-                            <h4>
-                                <a href="single.html">Kissan Tomato Ketchup, 950g</a>
-                            </h4>
-                            <div class="w3l-pricehkj">
-                                <h6>$99.00</h6>
-                                <p>Save $20.00</p>
-                            </div>
-                            <div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out">
-                                <form action="#" method="post">
-                                    <fieldset>
-                                        <input type="hidden" name="cmd" value="_cart" />
-                                        <input type="hidden" name="add" value="1" />
-                                        <input type="hidden" name="business" value=" " />
-                                        <input type="hidden" name="item_name" value="Kissan Tomato Ketchup, 950g" />
-                                        <input type="hidden" name="amount" value="99.00" />
-                                        <input type="hidden" name="discount_amount" value="1.00" />
-                                        <input type="hidden" name="currency_code" value="USD" />
-                                        <input type="hidden" name="return" value=" " />
-                                        <input type="hidden" name="cancel_return" value=" " />
-                                        <input type="submit" name="submit" value="Add to cart" class="button" />
-                                    </fieldset>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="w3l-specilamk">
-                        <div class="speioffer-agile">
-                            <a href="single.html">
-                                <img src="{{asset('/')}}front/images/s2.jpg" alt="">
-                            </a>
-                        </div>
-                        <div class="product-name-w3l">
-                            <h4>
-                                <a href="single.html">Madhur Pure Sugar, 1g</a>
-                            </h4>
-                            <div class="w3l-pricehkj">
-                                <h6>$69.00</h6>
-                                <p>Save $20.00</p>
-                            </div>
-                            <div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out">
-                                <form action="#" method="post">
-                                    <fieldset>
-                                        <input type="hidden" name="cmd" value="_cart" />
-                                        <input type="hidden" name="add" value="1" />
-                                        <input type="hidden" name="business" value=" " />
-                                        <input type="hidden" name="item_name" value="Madhur Pure Sugar, 1g" />
-                                        <input type="hidden" name="amount" value="69.00" />
-                                        <input type="hidden" name="discount_amount" value="1.00" />
-                                        <input type="hidden" name="currency_code" value="USD" />
-                                        <input type="hidden" name="return" value=" " />
-                                        <input type="hidden" name="cancel_return" value=" " />
-                                        <input type="submit" name="submit" value="Add to cart" class="button" />
-                                    </fieldset>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="w3l-specilamk">
-                        <div class="speioffer-agile">
-                            <a href="single2.html">
-                                <img src="{{asset('/')}}front/images/s3.jpg" alt="">
-                            </a>
-                        </div>
-                        <div class="product-name-w3l">
-                            <h4>
-                                <a href="single2.html">Surf Excel Liquid, 1.02L</a>
-                            </h4>
-                            <div class="w3l-pricehkj">
-                                <h6>$187.00</h6>
-                                <p>Save $30.00</p>
-                            </div>
-                            <div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out">
-                                <form action="#" method="post">
-                                    <fieldset>
-                                        <input type="hidden" name="cmd" value="_cart" />
-                                        <input type="hidden" name="add" value="1" />
-                                        <input type="hidden" name="business" value=" " />
-                                        <input type="hidden" name="item_name" value="Surf Excel Liquid, 1.02L" />
-                                        <input type="hidden" name="amount" value="187.00" />
-                                        <input type="hidden" name="discount_amount" value="1.00" />
-                                        <input type="hidden" name="currency_code" value="USD" />
-                                        <input type="hidden" name="return" value=" " />
-                                        <input type="hidden" name="cancel_return" value=" " />
-                                        <input type="submit" name="submit" value="Add to cart" class="button" />
-                                    </fieldset>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="w3l-specilamk">
-                        <div class="speioffer-agile">
-                            <a href="single.html">
-                                <img src="{{asset('/')}}front/images/s8.jpg" alt="">
-                            </a>
-                        </div>
-                        <div class="product-name-w3l">
-                            <h4>
-                                <a href="single.html">Cadbury Choclairs, 655.5g</a>
-                            </h4>
-                            <div class="w3l-pricehkj">
-                                <h6>$160.00</h6>
-                                <p>Save $60.00</p>
-                            </div>
-                            <div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out">
-                                <form action="#" method="post">
-                                    <fieldset>
-                                        <input type="hidden" name="cmd" value="_cart" />
-                                        <input type="hidden" name="add" value="1" />
-                                        <input type="hidden" name="business" value=" " />
-                                        <input type="hidden" name="item_name" value="Cadbury Choclairs, 655.5g" />
-                                        <input type="hidden" name="amount" value="160.00" />
-                                        <input type="hidden" name="discount_amount" value="1.00" />
-                                        <input type="hidden" name="currency_code" value="USD" />
-                                        <input type="hidden" name="return" value=" " />
-                                        <input type="hidden" name="cancel_return" value=" " />
-                                        <input type="submit" name="submit" value="Add to cart" class="button" />
-                                    </fieldset>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="w3l-specilamk">
-                        <div class="speioffer-agile">
-                            <a href="single2.html">
-                                <img src="{{asset('/')}}front/images/s6.jpg" alt="">
-                            </a>
-                        </div>
-                        <div class="product-name-w3l">
-                            <h4>
-                                <a href="single2.html">Fair & Lovely, 80 g</a>
-                            </h4>
-                            <div class="w3l-pricehkj">
-                                <h6>$121.60</h6>
-                                <p>Save $30.00</p>
-                            </div>
-                            <div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out">
-                                <form action="#" method="post">
-                                    <fieldset>
-                                        <input type="hidden" name="cmd" value="_cart" />
-                                        <input type="hidden" name="add" value="1" />
-                                        <input type="hidden" name="business" value=" " />
-                                        <input type="hidden" name="item_name" value="Fair & Lovely, 80 g" />
-                                        <input type="hidden" name="amount" value="121.60" />
-                                        <input type="hidden" name="discount_amount" value="1.00" />
-                                        <input type="hidden" name="currency_code" value="USD" />
-                                        <input type="hidden" name="return" value=" " />
-                                        <input type="hidden" name="cancel_return" value=" " />
-                                        <input type="submit" name="submit" value="Add to cart" class="button" />
-                                    </fieldset>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="w3l-specilamk">
-                        <div class="speioffer-agile">
-                            <a href="single.html">
-                                <img src="{{asset('/')}}front/images/s5.jpg" alt="">
-                            </a>
-                        </div>
-                        <div class="product-name-w3l">
-                            <h4>
-                                <a href="single.html">Sprite, 2.25L (Pack of 2)</a>
-                            </h4>
-                            <div class="w3l-pricehkj">
-                                <h6>$180.00</h6>
-                                <p>Save $30.00</p>
-                            </div>
-                            <div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out">
-                                <form action="#" method="post">
-                                    <fieldset>
-                                        <input type="hidden" name="cmd" value="_cart" />
-                                        <input type="hidden" name="add" value="1" />
-                                        <input type="hidden" name="business" value=" " />
-                                        <input type="hidden" name="item_name" value="Sprite, 2.25L (Pack of 2)" />
-                                        <input type="hidden" name="amount" value="180.00" />
-                                        <input type="hidden" name="discount_amount" value="1.00" />
-                                        <input type="hidden" name="currency_code" value="USD" />
-                                        <input type="hidden" name="return" value=" " />
-                                        <input type="hidden" name="cancel_return" value=" " />
-                                        <input type="submit" name="submit" value="Add to cart" class="button" />
-                                    </fieldset>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="w3l-specilamk">
-                        <div class="speioffer-agile">
-                            <a href="single2.html">
-                                <img src="{{asset('/')}}front/images/s9.jpg" alt="">
-                            </a>
-                        </div>
-                        <div class="product-name-w3l">
-                            <h4>
-                                <a href="single2.html">Lakme Eyeconic Kajal, 0.35 g</a>
-                            </h4>
-                            <div class="w3l-pricehkj">
-                                <h6>$153.00</h6>
-                                <p>Save $40.00</p>
-                            </div>
-                            <div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out">
-                                <form action="#" method="post">
-                                    <fieldset>
-                                        <input type="hidden" name="cmd" value="_cart" />
-                                        <input type="hidden" name="add" value="1" />
-                                        <input type="hidden" name="business" value=" " />
-                                        <input type="hidden" name="item_name" value="Lakme Eyeconic Kajal, 0.35 g" />
-                                        <input type="hidden" name="amount" value="153.00" />
-                                        <input type="hidden" name="discount_amount" value="1.00" />
-                                        <input type="hidden" name="currency_code" value="USD" />
-                                        <input type="hidden" name="return" value=" " />
-                                        <input type="hidden" name="cancel_return" value=" " />
-                                        <input type="submit" name="submit" value="Add to cart" class="button" />
-                                    </fieldset>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </li>
+                @endforeach
             </ul>
         </div>
     </div>
