@@ -19,7 +19,7 @@ class HomeController extends Controller
          return view('front.home.index',
          [
              'products'   => $products,
-             'products3'   => $products3,
+             //'products3'   => $products3,
              'categories' => $categories,
              'brands'     => $brands
          ]);
@@ -42,6 +42,25 @@ class HomeController extends Controller
             'brands'     => $brands
             
          ]);
+     }
+
+     public function brandDetails($id)
+     {
+        $products    = Product::where('brand_id',$id)->paginate(12);
+        $products2    = Product::where('brand_id',$id)->get();
+       $categories   = Category::where('publication_status',1)->get();
+       $brandName = Brand::find($id)->brand_name;
+       $brands     = Brand::where('publication_status',1)->get();
+
+        return view('front.brand.brand_details',
+        [
+           'products'     => $products,
+           'products2'     => $products2,
+           'categories'   => $categories,
+           'brandName' => $brandName,
+           'brands'     => $brands
+           
+        ]);
      }
 
      public function productDetail($id)

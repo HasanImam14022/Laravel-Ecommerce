@@ -15,6 +15,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/','HomeController@index');
 Route::get('/categorydetail/{id}','HomeController@categoryDetails');
+Route::get('/branddetail/{id}','HomeController@brandDetails');
 Route::get('/productDetails/{id}','HomeController@productDetail');
 
 //Admin Routes

@@ -147,7 +147,7 @@ Home
 				<div class="wrapper">
 					<!-- first section (nuts) -->
 					<div class="product-sec1">
-						<h3 class="heading-tittle">Nuts</h3>
+						<h3 class="heading-tittle">Products</h3>
 						@foreach($products as $product)
 						<div class="col-md-4 product-men">
 							<div class="men-pro-item simpleCart_shelfItem">
@@ -229,13 +229,14 @@ Home
 				<li>
 						<div class="w3l-specilamk">
 							<div class="speioffer-agile">
-								<a href="single.html">
+								<a href="{{URL::to('branddetail',['id' => $brand->id])}}">
+								
 									<img src="{{asset($brand->brand_image)}}" alt="" height="150px" width="120px">
 								</a>
 							</div>
 							<div class="product-name-w3l">
 								<h4>
-									<a href="single.html">{{$brand->brand_name}}</a>
+									<a href="{{URL::to('branddetail',['id' => $brand->id])}}">{{$brand->brand_name}}</a>
 								</h4>
 								<div class="w3l-pricehkj">
 									<h6>$220.00</h6>
