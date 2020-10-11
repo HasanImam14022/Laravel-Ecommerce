@@ -51,3 +51,11 @@ Route::get('/product-edit/{id}','ProductController@editProduct');
 Route::post('/product-update','ProductController@updateProduct');
 Route::get('/product-delete/{id}','ProductController@deleteProduct');
 
+//for cart
+Route::post('/add-to-cart','CartController@addToCart');
+Route::get('/show-cart','CartController@showCart');
+Route::post('/update-cart-product','CartController@updateCart');
+Route::get('/delete-cart-item/{id}','CartController@deleteCart');
+
+
+

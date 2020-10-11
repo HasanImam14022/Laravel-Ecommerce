@@ -66,7 +66,7 @@
             </div>
             <p>
                 <span class="item_price">{{$product->product_price}}</span>
-                <del>$1300.00</del>
+                <del>TK.1300.00</del>
                 <label>Free delivery</label>
             </p>
             <div class="single-infoagile">
@@ -82,7 +82,7 @@
                     </li>
                     <li>
                         1 offer from
-                        <span class="item_price">$950.00</span>
+                        <span class="item_price">Tk.950.00</span>
                     </li>
                 </ul>
             </div>
@@ -103,17 +103,11 @@
             </div>
             <div class="occasion-cart">
                 <div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out">
-                    <form action="#" method="post">
+                    <form action="{{URL::to('add-to-cart')}}" method="post">
+                        @csrf
                         <fieldset>
-                            <input type="hidden" name="cmd" value="_cart" />
-                            <input type="hidden" name="add" value="1" />
-                            <input type="hidden" name="business" value=" " />
-                            <input type="hidden" name="item_name" value="Zeeba Premium Basmati Rice - 5 KG" />
-                            <input type="hidden" name="amount" value="950.00" />
-                            <input type="hidden" name="discount_amount" value="1.00" />
-                            <input type="hidden" name="currency_code" value="USD" />
-                            <input type="hidden" name="return" value=" " />
-                            <input type="hidden" name="cancel_return" value=" " />
+                            <input type="number" min="1" name="qty" value="1" class="form-control" /></br>
+                            <input type="hidden" name="product_id" value="{{$product->id}}" />
                             <input type="submit" name="submit" value="Add to cart" class="button" />
                         </fieldset>
                     </form>
@@ -154,22 +148,23 @@
                                 <a href="{{URL::to('productDetails',['id' => $product->id])}}">{{$categoryProduct->product_name}}</a>
                             </h4>
                             <div class="w3l-pricehkj">
-                                <h6>{{$categoryProduct->product_price}}</h6>
-                                <p>Save $40.00</p>
+                                <h6>{{$categoryProduct->product_price}}Tk.</h6>
+                                
+                                <p>Save 40.00 Tk.</p>
                             </div>
                             <div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out">
-                                <form action="#" method="post">
+                                <form action="" method="post">
                                     <fieldset>
-                                        <input type="hidden" name="cmd" value="_cart" />
-                                        <input type="hidden" name="add" value="1" />
-                                        <input type="hidden" name="business" value=" " />
-                                        <input type="hidden" name="item_name" value="Aashirvaad, 5g" />
-                                        <input type="hidden" name="amount" value="220.00" />
-                                        <input type="hidden" name="discount_amount" value="1.00" />
-                                        <input type="hidden" name="currency_code" value="USD" />
-                                        <input type="hidden" name="return" value=" " />
-                                        <input type="hidden" name="cancel_return" value=" " />
-                                        <input type="submit" name="submit" value="Add to cart" class="button" />
+                                    <input type="hidden" name="cmd" value="_cart" />
+                                    <input type="hidden" name="add" value="1" />
+                                    <input type="hidden" name="business" value=" " />
+                                    <input type="hidden" name="item_name" value="Zeeba Premium Basmati Rice - 5 KG" />
+                                    <input type="hidden" name="amount" value="950.00" />
+                                    <input type="hidden" name="discount_amount" value="1.00" />
+                                    <input type="hidden" name="currency_code" value="USD" />
+                                    <input type="hidden" name="return" value=" " />
+                                    <input type="hidden" name="cancel_return" value=" " />
+                                    <input type="submit" name="submit" value="Add to cart" class="button" />
                                     </fieldset>
                                 </form>
                             </div>

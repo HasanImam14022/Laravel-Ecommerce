@@ -62,7 +62,7 @@
 						</div>
 						<div class="col-xs-8 img-deal1">
 							<h3>{{$category->category_name}}</h3>
-							<a href="single.html">$18.00</a>
+							<a href="single.html">Tk18.00</a>
 						</div>
 						<div class="clearfix"></div>
 					</div>
@@ -81,7 +81,7 @@
 						</div>
 						<div class="col-xs-8 img-deal1">
 							<h3>{{$brand->brand_name}}</h3>
-							<a href="single.html">$18.00</a>
+							<a href="single.html">Tk18.00</a>
 						</div>
 						<div class="clearfix"></div>
 					</div>
@@ -114,20 +114,12 @@
 									</h4>
 									<div class="info-product-price">
 										<span class="item_price">{{$product->product_price}}</span>
-										<del>$1020.00</del>
+										<del>{{$product->product_price + (.05*$product->product_price)}} Tk.</del>
 									</div>
 									<div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out">
-										<form action="#" method="post">
+										<form action="{{URL::to('productDetails',['id' => $product->id])}}"{{$product->product_name}}" >
 											<fieldset>
-												<input type="hidden" name="cmd" value="_cart" />
-												<input type="hidden" name="add" value="1" />
-												<input type="hidden" name="business" value=" " />
-												<input type="hidden" name="item_name" value="Zeeba Basmati Rice - 5 KG" />
-												<input type="hidden" name="amount" value="950.00" />
-												<input type="hidden" name="discount_amount" value="1.00" />
-												<input type="hidden" name="currency_code" value="USD" />
-												<input type="hidden" name="return" value=" " />
-												<input type="hidden" name="cancel_return" value=" " />
+
 												<input type="submit" name="submit" value="Add to cart" class="button" />
 											</fieldset>
 										</form>

@@ -176,7 +176,7 @@
                             </h4>
                             <div class="w3l-pricehkj">
                                 <h6>BDT-{{$product2->product_price}} Tk.</h6>
-                                <p>Save $40.00</p>
+                                
                             </div>
                             <div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out">
                                 <form action="#" method="post">
