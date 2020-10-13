@@ -84,19 +84,59 @@
 						</tr>
 						
 					 </table>
-					 <?php $customer_id = Session::get('customer_id'); ?>
-					 <?php if($customer_id != NULL) {?>
-						<div >
-					 <a  href="{{URL::to('/checkout')}}" class="btn btn-success btn-lg" role="button" aria-disabled="true">Checkout</a>
-					 </div>
-					 <?php } else{ ?>
-					 <div >
-					 <a  href="{{URL::to('login-check')}}" class="btn btn-success btn-lg" role="button" aria-disabled="true">Checkout</a>
-					 </div>
-					 <?php }?>
+					 
 				</div>
 			</div>
 			
+		</div>
+	</div>
+	<div class="checkout-left">
+				<div class="address_form_agile">
+					<h4>Add a new Details</h4>
+					<form action="payment.html" method="post" class="creditly-card-form agileinfo_form">
+						<div class="creditly-wrapper wthree, w3_agileits_wrapper">
+							<div class="information-wrapper">
+								<div class="first-row">
+									
+									<div class="controls">
+										<input class="billing-address-name" type="text" name="shipping_first_name" placeholder="First Name" required="">
+									</div>
+									<div class="controls">
+										<input class="billing-address-name" type="text" name="shipping_last_name" placeholder="Last Name" required="">
+									</div>
+									<div class="controls">
+										<input class="billing-address-name" type="email" name="shipping_email" placeholder="Email" required="">
+									</div>
+									<div class="w3_agileits_card_number_grids">
+										<div class="w3_agileits_card_number_grid_left">
+											<div class="controls">
+												<input type="text" placeholder="Mobile Number" name="shipping_mobile_number" required="">
+											</div>
+										</div>
+										<div class="w3_agileits_card_number_grid_right">
+										<div class="controls">
+												<input type="text" placeholder="Address" name="shipping_address" required="">
+											</div>
+											<div class="controls">
+												<input type="text" placeholder="City" name="shipping_city" required="">
+											</div>
+										</div>
+										<div class="clear"> </div>
+									</div>
+									
+								</div>
+								<button class="submit check_out">Delivery to this Address</button>
+							</div>
+						</div>
+					</form>
+					<div class="checkout-right-basket">
+						<a href="payment.html">Make a Payment
+							<span class="fa fa-hand-o-right" aria-hidden="true"></span>
+						</a>
+					</div>
+				</div>
+				<div class="clearfix"> </div>
+			</div>
 		</div>
 	</div>
 	<!-- //checkout page -->

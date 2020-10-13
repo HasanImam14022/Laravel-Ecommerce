@@ -6755,3 +6755,48 @@ button.close {
   }
 }
 /*# sourceMappingURL=bootstrap.css.map */
+.loginCheck {
+ 
+  
+  background-color: rgb(24, 193, 250);
+  text-align: center;
+  margin:0 auto;
+  height: 400px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.signIn{
+
+  
+  margin:10px;
+}
+.signUp{
+  
+  margin:10px;
+}
+
+.signInSignUp{
+ 
+  position: absolute;
+  margin-top: 50px;
+}
+.loginMsg{
+  margin-bottom:200px;
+  padding: 10px;
+  border: rounded;
+  background-color: #29c8f8;
+  border-radius:50px;
+}
+.errorMsg
+{
+  margin-bottom: 100px;
+  position: absolute;
+}
+
+
+
+
+
+

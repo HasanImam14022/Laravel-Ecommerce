@@ -39,7 +39,7 @@ class AdminsController extends Controller
                 {
                    
                     Session::put('admin_id',$result->admin_id);
-                    Session::put('admin_name',$result->name);
+                    //Session::put('admin_name',$result->name);
                     return redirect('/dashboard');
                 }
                 else

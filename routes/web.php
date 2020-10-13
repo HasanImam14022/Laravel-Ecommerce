@@ -57,5 +57,11 @@ Route::get('/show-cart','CartController@showCart');
 Route::post('/update-cart-product','CartController@updateCart');
 Route::get('/delete-cart-item/{id}','CartController@deleteCart');
 
+//for checkout
+Route::get('/login-check','CheckoutController@loginCheck');
+Route::post('/customer-registration','CheckoutController@customerRegistration');
+Route::get('/checkout','CheckoutController@checkout');
+Route::post('/customer-signin','CheckoutController@customerSignin');
+
 
 

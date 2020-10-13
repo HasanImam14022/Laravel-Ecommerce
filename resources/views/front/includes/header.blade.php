@@ -31,10 +31,24 @@
 					<li>
 						<span class="fa fa-phone" aria-hidden="true"></span> 001 234 5678
 					</li>
-					<li>
-						<a href="#" data-toggle="modal" data-target="#myModal1">
-							<span class="fa fa-unlock-alt" aria-hidden="true"></span> Sign In </a>
+					
+                    <?php $customer_id = Session::get('customer_id'); ?>
+					<?php if($customer_id != NULL) {?>
+					<li> 
+					<a href="#" data-toggle="modal" data-target="#myModal1">
+						<span class="fa fa-unlock-alt" aria-hidden="true"></span> Sign Out </a>
 					</li>
+					<?php } else{ ?>
+					  
+					 <li> 
+					<a href="#" data-toggle="modal" data-target="#myModal1">
+						<span class="fa fa-unlock-alt" aria-hidden="true"></span> Sign In </a>
+					</li>
+					<?php } ?>
+					
+                    
+				 
+					
 					<li>
 						<a href="#" data-toggle="modal" data-target="#myModal2">
 							<span class="fa fa-pencil-square-o" aria-hidden="true"></span> Sign Up </a>
@@ -466,9 +480,13 @@
 							<a href="#" data-toggle="modal" data-target="#myModal2">
 								Sign Up Now</a>
 						</p>
-						<form action="#" method="post">
+						
+
+                  </h3>
+						<form action="/customer-signin" method="post">
+						@csrf
 							<div class="styled-input agile-styled-input-top">
-								<input type="text" placeholder="User Name" name="Name" required="">
+								<input type="text" placeholder="User Name" name="customer_name" required="">
 							</div>
 							<div class="styled-input">
 								<input type="password" placeholder="Password" name="password" required="">
@@ -503,18 +521,22 @@
 						<p>
 							Come join the Grocery Shoppy! Let's set up your Account.
 						</p>
-						<form action="#" method="post">
+						<form action="/customer-registration" method="post">
+						    @csrf
 							<div class="styled-input agile-styled-input-top">
-								<input type="text" placeholder="Name" name="Name" required="">
+								<input type="text" placeholder="Name" name="customer_name" required="">
 							</div>
 							<div class="styled-input">
-								<input type="email" placeholder="E-mail" name="Email" required="">
+								<input type="email" placeholder="E-mail" name="customer_email" required="">
 							</div>
 							<div class="styled-input">
 								<input type="password" placeholder="Password" name="password" id="password1" required="">
 							</div>
 							<div class="styled-input">
-								<input type="password" placeholder="Confirm Password" name="Confirm Password" id="password2" required="">
+								<input type="password" placeholder="Confirm password" name="Confirm Password" id="password2" required="">
+							</div>
+							<div class="styled-input">
+								<input type="text" placeholder="Mobile number" name="mobile_number"  required="">
 							</div>
 							<input type="submit" value="Sign Up">
 						</form>
