@@ -93,7 +93,8 @@
 	<div class="checkout-left">
 				<div class="address_form_agile">
 					<h4>Add a new Details</h4>
-					<form action="payment.html" method="post" class="creditly-card-form agileinfo_form">
+					<form action="/save-shipping-details" method="post" class="creditly-card-form agileinfo_form">
+					@csrf
 						<div class="creditly-wrapper wthree, w3_agileits_wrapper">
 							<div class="information-wrapper">
 								<div class="first-row">

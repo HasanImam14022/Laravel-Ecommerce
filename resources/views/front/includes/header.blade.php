@@ -35,7 +35,7 @@
                     <?php $customer_id = Session::get('customer_id'); ?>
 					<?php if($customer_id != NULL) {?>
 					<li> 
-					<a href="#" data-toggle="modal" data-target="#myModal1">
+					<a href="/customer-sign-out" data-toggle="modal" >
 						<span class="fa fa-unlock-alt" aria-hidden="true"></span> Sign Out </a>
 					</li>
 					<?php } else{ ?>

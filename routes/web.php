@@ -62,6 +62,8 @@ Route::get('/login-check','CheckoutController@loginCheck');
 Route::post('/customer-registration','CheckoutController@customerRegistration');
 Route::get('/checkout','CheckoutController@checkout');
 Route::post('/customer-signin','CheckoutController@customerSignin');
+Route::get('/customer-sign-out','CheckoutController@customerSignout');
+Route::post('/save-shipping-details','CheckoutController@saveShippingDetails');
 
 
 
