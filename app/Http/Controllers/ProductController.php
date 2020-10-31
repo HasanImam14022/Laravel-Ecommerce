@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Session;
+session_start();
 use App\Product;
 use App\Category;
 use App\Brand;
@@ -11,6 +13,7 @@ class ProductController extends Controller
 {
     public function addProduct()
     {
+        $this->authCheck();
         $categories = Category::all();
         $brands = Brand::all();
         return view('admin.product.add_product',[
@@ -60,12 +63,20 @@ class ProductController extends Controller
     }
     public function manageProduct()
     {
-        
-        $products = Product::orderBy('id','DESC')->take(100)->get();
-        return view('admin.product.manage_product',['products'=>$products]);
+        $this->authCheck();
+        $categories = Category::all();
+        $brands = Brand::all();
+        $products = Product::orderBy('id','Desc')->take(99)->get();
+        return view('admin.product.manage_product',
+        [
+            'products'=>$products,
+            'categories'=>$categories,
+            'brands'=>$brands
+            ]);
     }
     public function editProduct($id)
     {
+        $this->authCheck();
         $categories = Category::all();
         $brands = Brand::all();
         
@@ -130,5 +141,17 @@ class ProductController extends Controller
         $product->delete();
         return redirect()->back();
 
+    }
+    private function authCheck()
+    {
+        $admin_id = Session::get('admin_id');
+        if($admin_id != NULL)
+        {
+            return;
+        }
+        else
+        {
+            return redirect('/adminLogin')->send();
+        }
     }
 }

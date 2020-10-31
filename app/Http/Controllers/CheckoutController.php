@@ -31,7 +31,7 @@ class CheckoutController extends Controller
         
         $customer_id = DB::table('tbl_customer')->insertGetId($data);
         Session::put('customer_id',$customer_id);
-        Session::put('customer_email',$customer_email);
+        //Session::put('customer_email',$customer_email);
         return Redirect('/checkout');
     }
 
@@ -93,9 +93,62 @@ class CheckoutController extends Controller
        
         
         $shipping_id = DB::table('shipping')->insertGetId($data);
-        Session::put('customer_id',$shipping_id);
+        Session::put('shipping_id',$shipping_id);
+        
         //Session::put('customer_email',$customer_email);
         return Redirect('/payment');
     }
+
+    public function payment()
+    {
+        $categories   = Category::where('publication_status',1)->get();
+        return view('front.customer.payment',[
+            'categories'      => $categories
+        ]);
+    }
+
+    public function orderPlace(Request $request)
+    {
+        $categories   = Category::where('publication_status',1)->get();
+        $payment_method = $request->payment_method;
+        $pdata = array();
+        $pdata['payment_method'] = $payment_method;
+        $pdata['payment_status'] = 'pending';
+        $payment_id = DB::table('payment')->insertGetId($pdata);
+
+        $odata = array();
+        $odata['customer_id'] = Session::get('customer_id');
+        $odata['shipping_id'] = Session::get('shipping_id');
+        $odata['payment_id']  = $payment_id;
+        $odata['order_total']  = Cart::getSubTotal();
+        $odata['payment_status'] = 'pending';
+        $order_id = DB::table('order')->insertGetId($odata);
+
+        $cartCollection = Cart::getContent();
+        $oddata = array();
+        foreach($cartCollection as $content)
+        {
+            $oddata['order_id'] = $order_id;
+            $oddata['product_id'] = $content->id;
+            $oddata['product_name'] = $content->name;
+            $oddata['product_price'] = $content->price;
+            $oddata['product_sales_quantity'] = $content->quantity;
+            DB::table('order_details')->insert($oddata);
+        }
+
+        if($payment_method == 'handcash')
+        {
+           
+            Cart::clear();
+            return view('front.customer.handcash',[
+                'categories'      => $categories
+            ]);
+        }
+
+
+        
+        
+    }
+
 
 }

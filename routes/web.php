@@ -18,6 +18,9 @@ Route::get('/categorydetail/{id}','HomeController@categoryDetails');
 Route::get('/branddetail/{id}','HomeController@brandDetails');
 Route::get('/productDetails/{id}','HomeController@productDetail');
 
+//for searching
+Route::get('/product-search','HomeController@searchProduct');
+
 //Admin Routes
 Route::get('adminLogin','AdminsController@index');
 Route::post('admin-login-check','AdminsController@adminLoginCheck');
@@ -64,6 +67,12 @@ Route::get('/checkout','CheckoutController@checkout');
 Route::post('/customer-signin','CheckoutController@customerSignin');
 Route::get('/customer-sign-out','CheckoutController@customerSignout');
 Route::post('/save-shipping-details','CheckoutController@saveShippingDetails');
+Route::get('/payment','CheckoutController@payment');
+Route::post('/order-place','CheckoutController@orderPlace');
 
 
+//for order management
+Route::get('/manage-order','OrderController@orderManage');
+Route::get('/view-order/{order_id}','OrderController@orderView');
 
+//for searching

@@ -1,7 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
-
+Use Session;
+session_start();
 use Illuminate\Http\Request;
 use App\Brand;
 
@@ -9,6 +10,7 @@ class BrandController extends Controller
 {
     public function addBrand()
     {
+        $this->authCheck();
         return view('admin.brand.add_brand');
     }
     public function newBrand(Request $request)
@@ -42,6 +44,7 @@ class BrandController extends Controller
     }
     public function manageBrand()
     {
+        $this->authCheck();
         $brands = Brand::all();
         
         
@@ -56,7 +59,7 @@ class BrandController extends Controller
     }
     public function updateBrand(Request $request)
     {
-
+        $this->authCheck();
        
         $brand = Brand::find($request->brand_id);
 
@@ -102,5 +105,17 @@ class BrandController extends Controller
         $brand->delete();
         return redirect()->back();
 
+    }
+    private function authCheck()
+    {
+        $admin_id = Session::get('admin_id');
+        if($admin_id != NULL)
+        {
+            return;
+        }
+        else
+        {
+            return redirect('/adminLogin')->send();
+        }
     }
 }

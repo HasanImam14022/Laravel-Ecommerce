@@ -6,7 +6,7 @@
         <div class="col-md-12">
            <div class="panel panel-primary">
               <div class="panel-heading">
-                 <h2><b>Update Category</b></h2>
+                 <h2><b>Update Brand</b></h2>
               </div>
               <div class="panel-body">
                  

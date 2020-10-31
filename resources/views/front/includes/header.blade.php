@@ -1,6 +1,6 @@
 <!-- top-header -->
 <div class="header-most-top">
-		<p>Grocery Offer Zone Top Deals & Discounts</p>
+		<p>Bd Shopper Offer Zone Top Deals & Discounts</p>
 	</div>
 	<!-- //top-header -->
 	<!-- header-bot-->
@@ -11,7 +11,7 @@
 				<h1>
 					<a href="/">
 						<span>B</span>d
-						<span>T</span>radition
+						<span>S</span>hopper
 						<img src="{{asset('/')}}front/images/logo2.png" alt=" ">
 					</a>
 				</h1>
@@ -57,8 +57,8 @@
 				<!-- //header lists -->
 				<!-- search -->
 				<div class="agileits_search">
-					<form action="#" method="post">
-						<input name="Search" type="search" placeholder="How can we help you today?" required="">
+					<form action="/product-search" >
+						<input name="product_name" type="search" placeholder="Search your product"  required="">
 						<button type="submit" class="btn btn-default" aria-label="Left Align">
 							<span class="fa fa-search" aria-hidden="true"> </span>
 						</button>

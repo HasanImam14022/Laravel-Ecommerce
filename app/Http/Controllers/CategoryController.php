@@ -4,13 +4,26 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Category;
+use Session;
+session_start();
 use AdminsController;
 
 class CategoryController extends Controller
 {
     public function addCategory()
     {
-        return view('admin.category.add_category');
+        $admin_id = Session::get('admin_id');
+        if($admin_id==NULL)
+        {
+            return view('admin.admin');
+        }
+        else
+        {
+
+            $this->authCheck();
+            return view('admin.category.add_category');
+        }  
+        
     }
     public function newCategory(Request $request)
     {
@@ -44,6 +57,7 @@ class CategoryController extends Controller
 
     public function manageCategory()
     {
+        $this->authCheck();
         $categories = Category::all();
         
         return view('admin.category.manage_category',['categories'=>$categories]);
@@ -51,6 +65,7 @@ class CategoryController extends Controller
 
     public function editCategory($id)
     {
+        $this->authCheck();
         $category = Category::where('id',$id)->first();
         //return $category;
         return view('admin.category.edit_category',['category'=>$category]);
@@ -106,6 +121,18 @@ class CategoryController extends Controller
         $category->delete();
         return redirect()->back();
 
+    }
+    private function authCheck()
+    {
+        $admin_id = Session::get('admin_id');
+        if($admin_id != NULL)
+        {
+            return;
+        }
+        else
+        {
+            return redirect('/adminLogin')->send();
+        }
     }
 
 }

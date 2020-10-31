@@ -65,8 +65,8 @@
                 </span>
             </div>
             <p>
-                <span class="item_price">{{$product->product_price}}</span>
-                <del>TK.1300.00</del>
+                <span class="item_price">{{$product->product_price}}Tk.</span>
+                <del>{{$product->product_price+(.05*$product->product_price)}}Tk.</del>
                 <label>Free delivery</label>
             </p>
             <div class="single-infoagile">
@@ -77,19 +77,17 @@
                     <li>
                          {{$product->product_quantity>0? "Product is Availavle":"Product is unavailable"}}
                     </li>
-                    <li>
-                        Sold and fulfilled by Supple Tek (3.6 out of 5 | 8 ratings).
-                    </li>
+                    
                     <li>
                         1 offer from
-                        <span class="item_price">Tk.950.00</span>
+                        <span class="item_price">from this awesome product</span>
                     </li>
                 </ul>
             </div>
             <div class="product-single-w3l">
                 <p>
                     <i class="fa fa-hand-o-right" aria-hidden="true"></i>This is a
-                    <label>Vegetarian</label> product.</p>
+                    <label>{{$product->product_name}}</label> product.</p>
                 <ul>
                     <li>
                       {{$product->product_long_description}}

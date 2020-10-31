@@ -44,8 +44,8 @@
                     <tr>
                       <td>{{$i++}}</td>
                       <td>{{$product->product_name}}</td>
-                      <td>{{$product->category->category_name}}</td>
-                      <td>{{$product->brand->brand_name}}</td>
+                      <td>{{$product->category_id}}</td>
+                      <td>{{$product->brand_id}}</td>
                       <td>{{$product->product_code}}</td>
                       <td>{{$product->product_price}}</td>
                       <td>{{$product->product_quantity}}</td>

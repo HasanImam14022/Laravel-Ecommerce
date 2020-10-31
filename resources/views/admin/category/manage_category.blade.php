@@ -38,7 +38,7 @@
                       <td><img src="{{asset($category->category_image)}}" alt="" height="50" width="70"/></td>
                       <td>{{$category->publication_status == 1 ? 'Published' : 'Unpublished'}}</td>
                       <td>
-                           <a href="{{URL::to('/category-edit/'.$category->id )}}" class="btn btn-success">
+                           <a href="{{URL::to('/category-edit/'.$category->id)}}" class="btn btn-success">
                               <i class="fa fa-edit"></i>
                            </a>
                            <a href="{{URL::to('/category-delete/'.$category->id )}}" class="btn btn-danger" >

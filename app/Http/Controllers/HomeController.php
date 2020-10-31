@@ -78,4 +78,23 @@ class HomeController extends Controller
          ]);
          
      }
+
+     public function searchProduct(Request $request)
+     {
+
+         $categories = Category::where('publication_status',1)->get();
+         $brands     = Brand::where('publication_status',1)->get(); 
+         $products = Product::
+                        where('product_name','like','%'.$request->input('product_name').'%')
+                        ->get();
+
+       return view('front.search',
+         [
+             'brands'          => $brands,
+             'categories'       => $categories,
+             'products' => $products
+             
+         ]);
+         
+     }
 }

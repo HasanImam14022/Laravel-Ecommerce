@@ -28,11 +28,11 @@ Home
 			<div class="item item2">
 				<div class="container">
 					<div class="carousel-caption">
-						<h3>Healthy
+						<!--<h3>Healthy
 							<span>Saving</span>
-						</h3>
+						</h3>-->
 						<p>Get Upto
-							<span>30%</span> Off</p>
+							<span>5%</span> Off</p>
 						<a class="button2" href="product.html">Shop Now </a>
 					</div>
 				</div>
@@ -57,7 +57,7 @@ Home
 							<span>Discount</span>
 						</h3>
 						<p>Get Now
-							<span>40%</span> Discount</p>
+							<span>10%</span> Discount</p>
 						<a class="button2" href="product.html">Shop Now </a>
 					</div>
 				</div>
@@ -114,7 +114,7 @@ Home
 						</div>
 						<div class="col-xs-8 img-deal1">
 							<h3>{{$category->category_name}}</h3>
-							<a href="single.html">$18.00</a>
+							<a href="#"></a>
 						</div>
 						<div class="clearfix"></div>
 					</div>
@@ -132,7 +132,7 @@ Home
 						</div>
 						<div class="col-xs-8 img-deal1">
 							<h3>{{$brand->brand_name}}</h3>
-							<a href="single.html">$18.00</a>
+							<a href="#"></a>
 						</div>
 						<div class="clearfix"></div>
 					</div>
@@ -210,7 +210,7 @@ Home
 	<div class="featured-section" id="projects">
 		<div class="container">
 			<!-- tittle heading -->
-			<h3 class="tittle-w3l">Special Offers
+			<h3 class="tittle-w3l">Special Brands
 				<span class="heading-style">
 					<i></i>
 					<i></i>
@@ -230,13 +230,10 @@ Home
 								</a>
 							</div>
 							<div class="product-name-w3l">
-								<h4>
+								<h4 style="text-align:center">
 									<a href="{{URL::to('branddetail',['id' => $brand->id])}}">{{$brand->brand_name}}</a>
 								</h4>
-								<div class="w3l-pricehkj">
-									<h6>$220.00</h6>
-									<p>Save $40.00</p>
-								</div>
+								
 								<div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out">
 									<form action="#" method="post">
 										<fieldset>

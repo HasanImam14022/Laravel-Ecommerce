@@ -11,7 +11,7 @@
                   <thead>
                     <tr>
                       <th>Sr. No</th>
-                      <th>Category Name</th>
+                      <th>Brand Name</th>
                       <th>Category Description</th>
                       <th>Category Image</th>
                       <th>Publication Status</th>

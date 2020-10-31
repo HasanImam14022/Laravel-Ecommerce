@@ -6796,6 +6796,39 @@ button.close {
 }
 
 
+* {
+  box-sizing: border-box;
+}
+.payment
+{
+   margin: auto;
+   margin-top: 30px;
+   text-align: center;
+   align-items: center;
+   align-content: center;
+   height: 500px;
+   width: 700px;
+   border-radius: 20%;
+   background-color: #1accfd;
+
+}
+
+.column {
+  float: left;
+  align-items: center;
+  margin: 50px;
+}
+  
+
+
+/* Clearfix (clear floats) */
+.payment::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+
 
 
 

@@ -313,40 +313,7 @@
 					</ul>
 				</div>
 				<!-- //brands -->
-				<!-- payment -->
-				<div class="sub-some child-momu">
-					<h5>Payment Method</h5>
-					<ul>
-						<li>
-							<img src="{{asset('/')}}front/images/pay2.png" alt="">
-						</li>
-						<li>
-							<img src="{{asset('/')}}front/images/pay5.png" alt="">
-						</li>
-						<li>
-							<img src="{{asset('/')}}front/images/pay1.png" alt="">
-						</li>
-						<li>
-							<img src="{{asset('/')}}front/images/pay4.png" alt="">
-						</li>
-						<li>
-							<img src="{{asset('/')}}front/images/pay6.png" alt="">
-						</li>
-						<li>
-							<img src="{{asset('/')}}front/images/pay3.png" alt="">
-						</li>
-						<li>
-							<img src="{{asset('/')}}front/images/pay7.png" alt="">
-						</li>
-						<li>
-							<img src="{{asset('/')}}front/images/pay8.png" alt="">
-						</li>
-						<li>
-							<img src="{{asset('/')}}front/images/pay9.png" alt="">
-						</li>
-					</ul>
-				</div>
-				<!-- //payment -->
+				
 			</div>
 			<!-- //footer fourth section (text) -->
 		</div>
